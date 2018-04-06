@@ -1,0 +1,18 @@
+@import "../../assets/scss/helpers";
+
+
+
+button {
+  outline: none;
+  border: none;
+}
+
+.bg-primary {
+  background-color: $accent-color !important;
+}
+
+img {
+  height: 28px;
+}
+
+

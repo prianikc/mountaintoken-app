@@ -1,0 +1,76 @@
+$accent-color: #1A5692 !default;
+$accent-gradient: linear-gradient(-160deg, #4090C3 0%, #1E5790 100%);
+$accent-gray: #D8D8D8;
+$accent-gray-dark: #4A4A4A;
+.fz-60 {
+  font-size: 60px;
+}
+.fz-48 {
+  font-size: 48px;
+  letter-spacing: 0;
+}
+.fz-30 {
+  font-size: 30px;
+}
+.fz-24 {
+  font-size: 24px;
+}
+.lineHeight-76 {
+  line-height: 76px;
+}
+.py-85 {
+  padding: 85px 0;
+}
+.py-155 {
+  padding: 155px 0;
+}
+.pt-165 {
+  padding-top:165px;
+}
+.margin-center {
+  margin: 0 auto;
+}
+.width-100 {
+  width: 100%;
+}
+
+.btn-accent {
+  white-space: nowrap;
+  background-image: linear-gradient(-179deg, #4090C3 0%, #1E5790 100%);
+  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.33);
+  border: none;
+  letter-spacing: normal;
+  line-height: 1.6;
+  font-size: 24px;
+  border-radius: 5px;
+  padding: 15px 0;
+  width: 100%;
+  &:hover, &:focus, &:active {
+    background-image: linear-gradient(-179deg, #428de2 0%, #154664 100%);
+    color: rgba(white, 0.7);
+  }
+}
+.accent-line {
+  background-image: $accent-gradient;
+  height: 28px;
+}
+.accent-bg {
+  background-image: $accent-gradient;
+}
+
+.bg-gray {
+  background-color: $accent-gray;
+  height: 390px;
+}
+.bottom-line {
+  height: 1px;
+  width: 100%;
+  background: $accent-gray;
+}
+.empty-block {
+  content: '';
+  height: 50px;
+}
+.accent-bg-dark {
+  background-color: $accent-gray-dark;
+}

@@ -1,0 +1,141 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "../../assets/scss/helpers";
+
+header {
+  background-image: url('../../assets/img/header-bg.jpg');
+  min-height: 765px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+table, th, td {
+  border: 1px solid white;
+}
+
+th, td {
+  padding: 7px;
+}
+
+section.mnt-scheme {
+  .accent-line {
+    position: relative;
+    top: -10px
+  }
+  img {
+    width: 50%;
+  }
+}
+
+section.stonemarket {
+  .bg-gray {
+    position: relative;
+    top: -300px;
+  }
+  img.macbook {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 960px;
+  }
+  img.phone-mockup {
+    width: 100%;
+  }
+  img.stonemarket-scheme {
+    width: 70%;
+  }
+  h2 {
+    position: relative;
+    top: -130px;
+  }
+}
+
+section.career {
+  background-image: url('../../assets/img/mountain-rock.png');
+  min-height: 811px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  p.subtitle {
+    font-size: 30px;
+    color: white;
+    letter-spacing: 0;
+  }
+}
+
+section.how-it-work {
+  img {
+    width: 70%;
+  }
+}
+
+section.mnt-ico {
+  img.logo-white {
+    height: 190px;
+  }
+  img.graff {
+    width: 100%;
+    padding-top: 10px;
+    margin-top: 20px;
+  }
+}
+
+// Breakpoints //
+
+@include media-breakpoint-down(md) {
+
+  .fz-60 {
+    font-size: 50px;
+    line-height: 1.4;
+    letter-spacing: 1.6px;
+  }
+
+  .fz-48 {
+    font-size: 35px;
+  }
+
+  section.career p.subtitle {
+    font-size: 20px;
+  }
+
+  section.mnt-scheme {
+    img {
+      width: 300px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  header {
+    min-height: 500px;
+  }
+  .fz-60 {
+    font-size: 35px;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+  }
+  .py-85 {
+    padding: 50px 0;
+  }
+
+  section.stonemarket {
+    .bg-gray {
+      top: -170px;
+      height: 230px;
+    }
+    h2 {
+      top: -70px;
+    }
+    ul {
+      margin-left: 15px;
+    }
+  }
+  section.road-map {
+    .fz-30 {
+      font-size: 20px;
+    }
+    .fz-24 {
+      font-size: 12px;
+    }
+  }
+}

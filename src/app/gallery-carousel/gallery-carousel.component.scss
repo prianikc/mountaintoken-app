@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "../../assets/scss/helpers";
+
+
+img {
+  border-radius: 10px;
+}
+
+@include media-breakpoint-down(sm) {
+  img.slide-item {
+    width: 98%;
+    height: 98%;
+
+  }
+}
