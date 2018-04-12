@@ -1,20 +1,20 @@
-import {Component, OnInit} from '@angular/core';
-import {MntApiService} from '../mnt-api.service';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { MntApiService } from '../mnt-api.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import {User} from '../user';
+import { User } from '../user';
 
-@Component( {
+@Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
-  styleUrls: [ './signup-page.component.scss' ]
-} )
+  styleUrls: ['./signup-page.component.scss']
+})
 export class SignupPageComponent implements OnInit {
   users: any = [];
   myForm: FormGroup;
-
-  constructor( private mntApiService: MntApiService,
-               private fb: FormBuilder ) {
+  res: any = {};
+  constructor(private mntApiService: MntApiService,
+    private fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -24,31 +24,31 @@ export class SignupPageComponent implements OnInit {
 
 
   private initForm(): void {
-    this.myForm = this.fb.group( {
-      //type: null,
-      email: [ null, [
+    this.myForm = this.fb.group({
+      // type: null,
+      email: [null, [
         Validators.required, Validators.email
-      ] ],
-      password: [ null, [
+      ]],
+      password: [null, [
         Validators.required
-      ] ]
-    } );
+      ]]
+    });
   }
 
-  isControlInvalid( controlName: string ): boolean {
-    const control = this.myForm.controls[ controlName ];
+  isControlInvalid(controlName: string): boolean {
+    const control = this.myForm.controls[controlName];
 
     const result: boolean = control.invalid && control.touched;
 
     return result;
   }
 
-  addUser( email: string, password: string ): void {
+  addUser(email: string, password: string) {
 
     const controls = this.myForm.controls;
     if (this.myForm.invalid) {
-      Object.keys( controls )
-        .forEach( controlName => controls[ controlName ].markAsTouched() );
+      Object.keys(controls)
+        .forEach(controlName => controls[controlName].markAsTouched());
       return;
     } else {
       email = email.trim();
@@ -56,10 +56,14 @@ export class SignupPageComponent implements OnInit {
       if (!email && !password) {
         return;
       }
-      this.mntApiService.addUser( { email, password } as User )
-        .subscribe( user => {
+      this.mntApiService.addUser({ email, password } as User)
+        .subscribe(user => {
           this.users.push(user);
-        });
+        },
+          res => {
+            this.res.get(res);
+          }
+        );
     }
   }
 }

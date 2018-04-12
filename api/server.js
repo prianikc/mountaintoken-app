@@ -9,7 +9,9 @@ app.listen(3000);
 console.log('Start server');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 
 
@@ -58,7 +60,6 @@ app.post('/signup', (req, res) => {
         "message": 'mail exist',
       });
       console.log('mail exist');
-
     } else {
       let sql = 'INSERT INTO users ( email, password) VALUES ( ?, ?)';
       let body = [req.body.email, req.body.password];
@@ -66,14 +67,14 @@ app.post('/signup', (req, res) => {
         if (err) {
           res.json({
             "message": 'SQL Error'
-          })
+          });
         } else {
           res.json({
             "message": "Success"
           });
           console.log('User created');
         }
-      })
+      });
     }
   });
 });
