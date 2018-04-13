@@ -8,10 +8,10 @@ const router = express.Router();
 app.listen(3000);
 console.log('Start server');
 
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+app.use(bodyParser.json());
 
 
 
@@ -46,7 +46,7 @@ app.get('/users', (req, res) => {
       console.log('Users list completed');
 
     }
-  })
+  });
 });
 
 app.post('/signup', (req, res) => {
@@ -56,10 +56,8 @@ app.post('/signup', (req, res) => {
 
   config.query(sql, emailBody, (err, userEmail) => {
     if (userEmail.length >= 1) {
-      res.json({
-        "message": 'mail exist',
-      });
-      console.log('mail exist');
+      res.send('mail exist');
+      console.log('mail exist!!!!');
     } else {
       let sql = 'INSERT INTO users ( email, password) VALUES ( ?, ?)';
       let body = [req.body.email, req.body.password];
@@ -69,9 +67,7 @@ app.post('/signup', (req, res) => {
             "message": 'SQL Error'
           });
         } else {
-          res.json({
-            "message": "Success"
-          });
+          res.send(message = "Success");
           console.log('User created');
         }
       });

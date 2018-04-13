@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { User } from './user';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -14,7 +14,13 @@ export class MntApiService {
   getUsers(): Observable<any> {
     return this._http.get<any>(this.mntAPI + '/users');
   }
-  addUser(user: User): Observable<User> {
-    return this._http.post(this.mntAPI + '/signup', user);
+  addUser(user: User): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this._http.post<any>(this.mntAPI + '/signup', user, httpOptions)
+      .map(res => <any>res);
   }
 }

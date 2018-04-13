@@ -3,7 +3,6 @@ import { MntApiService } from '../mnt-api.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { User } from '../user';
-
 @Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
@@ -12,7 +11,12 @@ import { User } from '../user';
 export class SignupPageComponent implements OnInit {
   users: any = [];
   myForm: FormGroup;
-  res: any = {};
+  res: {
+    error: {
+      text: string
+    }
+  };
+
   constructor(private mntApiService: MntApiService,
     private fb: FormBuilder) {
   }
@@ -60,8 +64,8 @@ export class SignupPageComponent implements OnInit {
         .subscribe(user => {
           this.users.push(user);
         },
-          res => {
-            this.res.get(res);
+          res => { this.res = res,
+            console.log(this.res);
           }
         );
     }

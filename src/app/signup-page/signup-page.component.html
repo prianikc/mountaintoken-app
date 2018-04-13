@@ -2,7 +2,7 @@
   <form [formGroup]="myForm">
     <div class="form-group">
       <label for="email">Email address</label>
-      <small class="form-text text-danger">{{res?.message}}</small>
+      <small class="form-text text-danger">{{res?.error?.text}}</small>
 
       <input formControlName="email" #userEmail type="email" class="form-control" id="email" placeholder="Enter email" autocomplete="email">
       <small *ngIf="isControlInvalid('email')" class="form-text text-danger">неправельный формат почты</small>
