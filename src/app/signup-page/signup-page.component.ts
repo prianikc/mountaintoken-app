@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MntApiService } from '../mnt-api.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
+import {  Router } from '@angular/router';
+
+import { MntApiService } from '../mnt-api.service';
 
 import { User } from '../user';
+
 @Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
@@ -11,14 +15,17 @@ import { User } from '../user';
 export class SignupPageComponent implements OnInit {
   users: any = [];
   myForm: FormGroup;
-  res: {
+  public res: {
     error: {
-      text: string
-    }
+      succes: boolean,
+      message: string
+    },
+    status: any
   };
-
-  constructor(private mntApiService: MntApiService,
-    private fb: FormBuilder) {
+  constructor(
+    private mntApiService: MntApiService,
+    private fb: FormBuilder,
+    public routes: Router) {
   }
 
   ngOnInit() {
@@ -64,8 +71,11 @@ export class SignupPageComponent implements OnInit {
         .subscribe(user => {
           this.users.push(user);
         },
-          res => { this.res = res,
-            console.log(this.res);
+          res => {
+            this.res = res;
+              if (res.status === 201) {
+                this.routes.navigate(['/guest']);
+              }
           }
         );
     }

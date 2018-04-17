@@ -20,7 +20,6 @@ export class MntApiService {
         'Content-Type':  'application/json'
       })
     };
-    return this._http.post<any>(this.mntAPI + '/signup', user, httpOptions)
-      .map(res => <any>res);
+    return this._http.post<any>(this.mntAPI + '/signup', user, httpOptions);
   }
 }

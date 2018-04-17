@@ -2,7 +2,9 @@
   <form [formGroup]="myForm">
     <div class="form-group">
       <label for="email">Email address</label>
-      <small class="form-text text-danger">{{res?.error?.text}}</small>
+      <small class="form-text text-danger">
+        {{res?.error?.message}}
+      </small>
 
       <input formControlName="email" #userEmail type="email" class="form-control" id="email" placeholder="Enter email" autocomplete="email">
       <small *ngIf="isControlInvalid('email')" class="form-text text-danger">неправельный формат почты</small>
@@ -14,7 +16,7 @@
       <small *ngIf="isControlInvalid('password')" class="form-text text-danger">это поле не может быть пустым</small>
 
     </div>
-    <button type="submit" (click)="addUser(userEmail.value, userPassword.value)" userEmail.value='' userPassword.value='' class="btn btn-primary">Submit
+    <button (click)="addUser(userEmail.value, userPassword.value)" userEmail.value='' userPassword.value='' class="btn btn-primary">Submit
     </button>
   </form>
 
