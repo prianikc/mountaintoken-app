@@ -29,7 +29,7 @@ export class AuthService {
           localStorage.setItem('id_token', res.token);
           localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
           this.loggedIn.next(this.isLoggedIn());
-           this.loggedOut.next(this.isLoggedOut());
+          this.loggedOut.next(this.isLoggedOut());
         }
       })
       .shareReplay();
@@ -44,8 +44,8 @@ export class AuthService {
   logout() {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    // this.loggedIn.next(false);
-    // this.loggedOut.next(true);
+    this.loggedIn.next(this.isLoggedIn());
+    this.loggedOut.next(this.isLoggedOut());
   }
 
   public isLoggedIn() {

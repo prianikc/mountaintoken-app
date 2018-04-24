@@ -21,10 +21,10 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>-->
       </ul>
-      <a *ngIf="isLoggedIn$" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/users">пользователи</a>    
-      <a *ngIf="isLoggedOut$" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/login">вход</a>
-      <span *ngIf="isLoggedIn$"  class="text-white d-block pr-3 pl-3 pl-lg-0" (click)="logOut()">выход</span>
-      <a *ngIf="isLoggedOut$" class="d-block pt-2 pt-lg-0 pl-3 pl-lg-0" routerLink="/signup">регистрация</a>
+      <a *ngIf="isLoggedIn$ | async" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/users">пользователи</a>    
+      <a *ngIf="isLoggedOut$ | async" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/login">вход</a>
+      <span *ngIf="isLoggedIn$ | async"  class="text-white d-block pr-3 pl-3 pl-lg-0" (click)="logOut()">выход</span>
+      <a *ngIf="isLoggedOut$ | async" class="d-block pt-2 pt-lg-0 pl-3 pl-lg-0" routerLink="/signup">регистрация</a>
     </div>
   </div>
 </nav>
