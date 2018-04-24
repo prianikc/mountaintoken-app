@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -11,14 +11,18 @@ import { AppComponent } from './app.component';
 import { GuestPageComponent } from './guest-page/guest-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { UsersComponent } from './users/users.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GalleryCarouselComponent } from './gallery-carousel/gallery-carousel.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MntApiService } from './mnt-api.service';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UsersComponent } from './users/users.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { GalleryCarouselComponent } from './gallery-carousel/gallery-carousel.component';
-import { FooterComponent } from './footer/footer.component';
+import { AuthService } from './auth.service';
+
+import { AuthInterceptor } from './auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { FooterComponent } from './footer/footer.component';
     PageNotFoundComponent,
     UsersComponent,
     GalleryCarouselComponent,
-    FooterComponent
+    FooterComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,15 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     SlickModule.forRoot()
   ],
-  providers: [MntApiService],
+  providers: [
+    MntApiService,
+    AuthService,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

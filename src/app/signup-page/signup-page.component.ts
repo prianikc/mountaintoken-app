@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MntApiService } from '../mnt-api.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+import { MntApiService } from '../mnt-api.service';
 
 import { User } from '../user';
+import { ResInterceptor } from '../res-interceptor';
 
 @Component({
   selector: 'app-signup-page',
@@ -12,9 +16,15 @@ import { User } from '../user';
 export class SignupPageComponent implements OnInit {
   users: any = [];
   myForm: FormGroup;
-  res: any = {};
-  constructor(private mntApiService: MntApiService,
-    private fb: FormBuilder) {
+  public user: {
+      succes: boolean,
+      message: string,
+      status: number
+  };
+  constructor(
+    private mntApiService: MntApiService,
+    private fb: FormBuilder,
+    public routes: Router) {
   }
 
   ngOnInit() {
@@ -43,27 +53,24 @@ export class SignupPageComponent implements OnInit {
     return result;
   }
 
-  addUser(email: string, password: string) {
-
+  addUser() {
+    const val = this.myForm.value;
     const controls = this.myForm.controls;
     if (this.myForm.invalid) {
       Object.keys(controls)
         .forEach(controlName => controls[controlName].markAsTouched());
       return;
     } else {
-      email = email.trim();
-      password = password.trim();
-      if (!email && !password) {
+      val.email = val.email.trim();
+      val.password = val.password.trim();
+      if (!val.email && !val.password) {
         return;
       }
-      this.mntApiService.addUser({ email, password } as User)
+       return this.mntApiService.addUser(val.email, val.password)
         .subscribe(user => {
-          this.users.push(user);
-        },
-          res => {
-            this.res.get(res);
-          }
-        );
+          this.user = user;
+          console.log(user);
+        });
     }
   }
 }
