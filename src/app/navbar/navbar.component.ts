@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Observable } from 'rxjs/Observable';
+import { AuthGuardService } from '../auth-guard.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,20 +10,20 @@ import { Observable } from 'rxjs/Observable';
 })
 export class NavbarComponent implements OnInit {
   show = false;
-  isLoggedIn$: Observable<boolean>;
-  isLoggedOut$: Observable<boolean>;
+  // isLoggedIn$: Observable<boolean>;
+  // isLoggedOut$: Observable<boolean>;
 
   toggleCollapse() {
     this.show = !this.show;
   }
-
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService,
+    private authGuard: AuthGuardService
+  ) {
   }
 
   ngOnInit() {
-    this.isLoggedIn$ = this.auth.loggedIn;
-    this.isLoggedOut$ = this.auth.loggedOut;
   }
+
   logOut(): void {
     this.auth.logout();
   }

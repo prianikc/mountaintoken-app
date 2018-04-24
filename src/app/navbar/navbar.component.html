@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
   <div class="container">
-    <button (click)="toggleCollapse ()" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <button (click)="toggleCollapse ()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" routerLink="/">
@@ -11,7 +10,7 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03" [class.show]="show">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-       <!-- <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
@@ -21,10 +20,11 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>-->
       </ul>
-      <a *ngIf="isLoggedIn$ | async" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/users">пользователи</a>    
-      <a *ngIf="isLoggedOut$ | async" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/login">вход</a>
-      <span *ngIf="isLoggedIn$ | async"  class="text-white d-block pr-3 pl-3 pl-lg-0" (click)="logOut()">выход</span>
-      <a *ngIf="isLoggedOut$ | async" class="d-block pt-2 pt-lg-0 pl-3 pl-lg-0" routerLink="/signup">регистрация</a>
+      <a *ngIf="authGuard.canActivate()" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/users" routerLinkActive="active-link">пользователи</a>
+      <a class="d-block pr-3 pl-3 pl-lg-0" routerLink="/login">вход</a>
+      <span class="text-white d-block pr-3 pl-3 pl-lg-0" (click)="logOut()">выход</span>
+      <a class="d-block pt-2 pt-lg-0 pl-3 pl-lg-0" routerLink="/signup">регистрация</a>
+      
     </div>
   </div>
 </nav>

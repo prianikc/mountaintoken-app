@@ -24,6 +24,10 @@ import { AuthService } from './auth.service';
 
 import { AuthInterceptor } from './auth-interceptor';
 
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuardService } from './auth-guard.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,15 +47,24 @@ import { AuthInterceptor } from './auth-interceptor';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    JwtModule.forRoot({
+        config: {
+          tokenGetter: () => {
+            return localStorage.getItem('id_token');
+          }
+        }
+      })
   ],
   providers: [
     MntApiService,
     AuthService,
+    AuthGuardService,
+    AuthInterceptor,
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

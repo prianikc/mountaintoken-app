@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 
 
 app.get('/users', checkAuth, (req, res) => {
-  let sql = 'SELECT * FROM users';
+  let sql = 'SELECT email, id FROM users';
   config.query(sql, (err, rows) => {
     if (err) {
       res.json({
