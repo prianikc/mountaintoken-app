@@ -26,6 +26,7 @@ import { AuthInterceptor } from './auth-interceptor';
 
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './auth-guard.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { AuthGuardService } from './auth-guard.service';
     GalleryCarouselComponent,
     FooterComponent,
     LoginPageComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

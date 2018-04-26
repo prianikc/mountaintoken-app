@@ -10,8 +10,7 @@ import { AuthGuardService } from '../auth-guard.service';
 })
 export class NavbarComponent implements OnInit {
   show = false;
-  // isLoggedIn$: Observable<boolean>;
-  // isLoggedOut$: Observable<boolean>;
+
 
   toggleCollapse() {
     this.show = !this.show;

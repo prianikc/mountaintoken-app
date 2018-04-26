@@ -6,11 +6,13 @@ import { UsersComponent } from './users/users.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/guest', pathMatch: 'full' },
   { path: 'guest', component: GuestPageComponent },
   { path: 'signup', component: SignupPageComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: 'users', component: UsersComponent,
   canActivate: [AuthGuard] },
   { path: 'login', component: LoginPageComponent },

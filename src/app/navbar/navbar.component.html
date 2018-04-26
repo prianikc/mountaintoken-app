@@ -20,7 +20,8 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>-->
       </ul>
-      <a *ngIf="authGuard.canActivate()" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/users" routerLinkActive="active-link">пользователи</a>
+      <a *ngIf="authGuard.canActivate()" class="d-block pr-3 pl-3 pl-lg-0" routerLink="/users">пользователи</a>
+      <a class="d-block pr-3 pl-3 pl-lg-0" routerLink="/profile">профайл</a>
       <a class="d-block pr-3 pl-3 pl-lg-0" routerLink="/login">вход</a>
       <span class="text-white d-block pr-3 pl-3 pl-lg-0" (click)="logOut()">выход</span>
       <a class="d-block pt-2 pt-lg-0 pl-3 pl-lg-0" routerLink="/signup">регистрация</a>

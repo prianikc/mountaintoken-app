@@ -33,8 +33,10 @@ export class AuthService {
         if (res.loginStatus === true) {
           localStorage.setItem('id_token', res.token);
         }
-      });
+      })
+      .shareReplay();
   }
+
   logout() {
     localStorage.removeItem('id_token');
   }
