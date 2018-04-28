@@ -11,8 +11,8 @@ import * as jwt_decode from 'jwt-decode';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  public users: {
-    user: [
+  public data: {
+    users: [
       {
         email: string
       }
@@ -36,7 +36,8 @@ export class UserProfileComponent implements OnInit {
   getUser(id): void {
     this.mntApiService.getById(id)
       .subscribe(users => {
-        this.users = users;
+        this.data = users;
+        console.log(users);
       });
   }
 }

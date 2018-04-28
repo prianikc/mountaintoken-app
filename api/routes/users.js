@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const checkAuth = require('../middleware/check-auth');
 
-router.get('/users/:id', (req, res) => {
+router.get('/users/:id', checkAuth, (req, res) => {
   const id = req.params.id;
   let sql = 'SELECT * FROM users WHERE id = ?';
   config.query(sql, id, (err, users) => {
@@ -16,7 +16,7 @@ router.get('/users/:id', (req, res) => {
         users: users
       });
     } else {
-        res.status(404);
+      res.status(404);
     }
   });
 });
@@ -66,16 +66,27 @@ router.post('/signup', (req, res) => {
     } else {
       bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err) {
+          console.log(err);
           return res.status(500).json({
             error: err
           });
         } else {
-          let sql = 'INSERT INTO users ( email, password) VALUES ( ?, ?)';
-          let email = req.body.email;
-          let password = hash;
-          let body = [email, password];
-          config.query(sql, body, (err) => {
+          console.log('here');
+          let sql = 'INSERT INTO users SET ?';
+          const user = {
+            email: req.body.email,
+            password: hash,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            phone_number: req.body.phone_number,
+            smartkontract_id: req.body.smartkontract_id,
+            country: req.body.country,
+            city: req.body.city
+          };
+          console.log(user);
+          config.query(sql, user, (err) => {
             if (err) {
+              console.log(err);
               res.json({
                 "message": 'SQL Error'
               });

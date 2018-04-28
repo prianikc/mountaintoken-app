@@ -1,20 +1,21 @@
-<div class="contauner">
-<form [formGroup]="form">
-  <fieldset>
-      <legend>Login</legend> <small>{{user?.message}}</small>
-      <div class="form-field">
-          <label>Email:</label>
-          <input name="email" formControlName="email">
-      </div>
-      <div class="form-field">
-          <label>Password:</label>
-          <input name="password" formControlName="password" 
-                 type="password">
-      </div>
-  </fieldset>
-  <div class="form-buttons">
-      <button class="button button-primary" 
-              (click)="login()">Login</button>
-  </div>
-</form>
-</div> 
+<div class="wraper">
+<div class="container pt-165">
+
+
+  <form class="form-signin" [formGroup]="form">
+    <h2 class="form-signin-heading">Авторизируйтесь</h2>
+    <small>{{user?.message}}</small>
+    <label for="email" class="sr-only">Email address</label>
+    <input formControlName="email" type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+    <label for="password" class="sr-only">Password</label>
+    <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password" required>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Запомнить меня
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">войти</button>
+  </form>
+
+</div>
+</div>

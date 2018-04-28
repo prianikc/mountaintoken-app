@@ -16,9 +16,9 @@ export class SignupPageComponent implements OnInit {
   users: any = [];
   myForm: FormGroup;
   public user: {
-      succes: boolean,
-      message: string,
-      status: number
+    succes: boolean,
+    message: string,
+    status: number
   };
   constructor(
     private mntApiService: MntApiService,
@@ -35,12 +35,14 @@ export class SignupPageComponent implements OnInit {
   private initForm(): void {
     this.myForm = this.fb.group({
       // type: null,
-      email: [null, [
-        Validators.required, Validators.email
-      ]],
-      password: [null, [
-        Validators.required
-      ]]
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]],
+      first_name: [null, [Validators.required]],
+      last_name: [null, [Validators.required]],
+      phone_number: [null, [Validators.required]],
+      smartkontract_id: [null, [Validators.required]],
+      country: [null, [Validators.required]],
+      city: [null, [Validators.required]]
     });
   }
 
@@ -60,12 +62,20 @@ export class SignupPageComponent implements OnInit {
         .forEach(controlName => controls[controlName].markAsTouched());
       return;
     } else {
-      val.email = val.email.trim();
-      val.password = val.password.trim();
+
+        val.email = val.email.trim();
+        val.password = val.password.trim();
+        val.first_name = val.first_name.trim();
+        val.last_name = val.last_name.trim();
+        val.phone_number = val.phone_number.trim();
+        val.smartkontract_id = val.smartkontract_id.trim();
+        val.country = val.country.trim();
+        val.city = val.city.trim();
       if (!val.email && !val.password) {
         return;
       }
-       return this.mntApiService.addUser(val.email, val.password)
+const dataUser = this.myForm.value;
+      return this.mntApiService.addUser(dataUser)
         .subscribe(user => {
           this.user = user;
           console.log(user);
