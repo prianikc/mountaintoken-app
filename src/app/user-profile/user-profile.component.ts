@@ -37,7 +37,6 @@ export class UserProfileComponent implements OnInit {
     this.mntApiService.getById(id)
       .subscribe(users => {
         this.data = users;
-        console.log(users);
       });
   }
 }

@@ -45,9 +45,9 @@ $accent-gray-dark: #4A4A4A;
   border-radius: 5px;
   padding: 15px 0;
   width: 100%;
+  color:white;
   &:hover, &:focus, &:active {
     background-image: linear-gradient(-179deg, #428de2 0%, #154664 100%);
-    color: rgba(white, 0.7);
   }
 }
 .accent-line {
@@ -73,4 +73,7 @@ $accent-gray-dark: #4A4A4A;
 }
 .accent-bg-dark {
   background-color: $accent-gray-dark;
+}
+.wraper {
+  height: 79.3vh;
 }

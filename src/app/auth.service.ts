@@ -29,7 +29,6 @@ export class AuthService {
     return this._http.post<any>(this.mntAPI + '/login', { email, password })
       .do(res => {
         this.res = res;
-        console.log(res);
         if (res.loginStatus === true) {
           localStorage.setItem('id_token', res.token);
         }

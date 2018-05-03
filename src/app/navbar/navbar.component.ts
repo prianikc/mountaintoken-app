@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
     this.show = !this.show;
   }
   constructor(private auth: AuthService,
-    private authGuard: AuthGuardService
+    public authGuard: AuthGuardService
   ) {
   }
 

@@ -1,0 +1,87 @@
+<div class="wraper d-flex justify-content-center d-flex align-items-center">
+  <form [formGroup]="form">
+    <div class="container" *ngFor="let user of data?.users">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-md-right text-center">
+          <img src="../../assets/img/user.svg" alt="user-avatar" style="width: 200px">
+        </div>
+        <div class="col-md-6 text-md-left text-center">
+          <h1>{{user.first_name}} {{user.last_name}}</h1>
+        </div>
+      </div>
+      <div class="row pt-3">
+        <div class="first-name col-md-6 text-center text-md-right">
+          <label for="first_name">
+            <strong>Имя:</strong>
+          </label>
+        </div>
+        <div class="form-group col-md-4">
+          <input [(ngModel)]="user.first_name" formControlName="first_name" type="text" class="form-control" id="first_name" placeholder="Enter first name" autocomplete="first_name">
+          <small *ngIf="isControlInvalid('first_name')" class="form-text text-danger">это поле не может быть пустым</small>
+        </div>
+        <div class="last-name col-md-6 text-center text-md-right">
+          <label for="last_name">
+            <strong>Фамилия:</strong>
+          </label>
+        </div>
+        <div class="form-group col-md-4">
+          <input [(ngModel)]="user.last_name" formControlName="last_name" type="text" class="form-control" id="last_name" placeholder="Enter last name" autocomplete="last_name">
+          <small *ngIf="isControlInvalid('last_name')" class="form-text text-danger">это поле не может быть пустым</small>
+        </div>
+        <div class="user-emial col-md-6 text-center text-md-right">
+          <label for="email">
+            <strong>Email:</strong>
+          </label>
+        </div>
+        <div class="form-group col-md-4">
+          <input [ngModel]="user.email" formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email" autocomplete="email">
+          <small *ngIf="isControlInvalid('email')" class="form-text text-danger">это поле не может быть пустым</small>
+        </div>
+        <div class="user-phone col-md-6 text-center text-md-right">
+          <label for="phone_number">
+            <strong>Телефон:</strong>
+          </label>
+        </div>
+        <div class="form-group col-md-4">
+          <input [ngModel]="user.phone_number" formControlName="phone_number" type="text" class="form-control" id="phone_number" placeholder="Enter phone_number"
+            autocomplete="phone_number">
+          <small *ngIf="isControlInvalid('phone_number')" class="form-text text-danger">это поле не может быть пустым</small>
+        </div>
+        <div class="user_smartkontract col-md-6 text-center text-md-right">
+          <label for="smartkontract_id">
+            <strong> Smartkontract ключ:</strong>
+          </label>
+        </div>
+        <div class="form-group col-md-4">
+          <input [ngModel]="user.smartkontract_id" formControlName="smartkontract_id" type="text" class="form-control" id="smartkontract_id" placeholder="Enter Smartkontract id"
+            autocomplete="smartkontract_id">
+          <small *ngIf="isControlInvalid('smartkontract_id')" class="form-text text-danger">это поле не может быть пустым</small>
+        </div>
+        <div class="user-country col-md-6 text-center text-md-right">
+          <label for="country">
+            <strong>Страна:</strong>
+          </label>
+        </div>
+        <div class="form-group col-md-4">
+          <input [ngModel]="user.country" formControlName="country" type="text" class="form-control" id="country" placeholder="Enter Country" autocomplete="country">
+          <small *ngIf="isControlInvalid('country')" class="form-text text-danger">это поле не может быть пустым</small>
+        </div>
+        <div class="user-city col-md-6 text-center text-md-right">
+          <label for="city">
+            <strong>Город:</strong>
+          </label>
+        </div>
+        <div class="form-group col-md-4">  
+
+          <input [ngModel]="user.city" formControlName="city" type="text" class="form-control" id="city" placeholder="Enter City" autocomplete="city">
+          <small *ngIf="isControlInvalid('city')" class="form-text text-danger">это поле не может быть пустым</small>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12"></div>
+        <button class="mr-4 d-block btn btn-primary mt-3" type="submit" (click)="editUser()" >Сохранить</button>
+        <a class="d-block btn btn-primary mt-3" routerLink="/guest">Отменить</a>
+      </div>
+    </div>
+  </form>
+</div>

@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { MntApiService } from '../mnt-api.service';
 
 import { User } from '../user';
-import { ResInterceptor } from '../res-interceptor';
 
 @Component({
   selector: 'app-signup-page',
@@ -16,7 +15,7 @@ export class SignupPageComponent implements OnInit {
   users: any = [];
   myForm: FormGroup;
   public user: {
-    succes: boolean,
+    sacces: boolean,
     message: string,
     status: number
   };
@@ -41,8 +40,8 @@ export class SignupPageComponent implements OnInit {
       last_name: [null, [Validators.required]],
       phone_number: [null, [Validators.required]],
       smartkontract_id: [null, [Validators.required]],
-      country: [null, [Validators.required]],
-      city: [null, [Validators.required]]
+      country: [null],
+      city: [null]
     });
   }
 
@@ -63,22 +62,22 @@ export class SignupPageComponent implements OnInit {
       return;
     } else {
 
-        val.email = val.email.trim();
-        val.password = val.password.trim();
-        val.first_name = val.first_name.trim();
-        val.last_name = val.last_name.trim();
-        val.phone_number = val.phone_number.trim();
-        val.smartkontract_id = val.smartkontract_id.trim();
-        val.country = val.country.trim();
-        val.city = val.city.trim();
+      val.email = val.email.trim();
+      val.password = val.password.trim();
+      val.first_name = val.first_name.trim();
+      val.last_name = val.last_name.trim();
+      val.phone_number = val.phone_number.trim();
+      val.smartkontract_id = val.smartkontract_id.trim();
       if (!val.email && !val.password) {
         return;
       }
-const dataUser = this.myForm.value;
+      const dataUser = this.myForm.value;
       return this.mntApiService.addUser(dataUser)
         .subscribe(user => {
           this.user = user;
-          console.log(user);
+          if (user.sacces) {
+            this.routes.navigate(['login']);
+          }
         });
     }
   }

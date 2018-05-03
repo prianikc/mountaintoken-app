@@ -1,20 +1,19 @@
-<div class="wraper">
-<div class="container pt-165">
+<div class="wraper d-flex justify-content-center align-items-center">
+<div class="container">
 
 
   <form class="form-signin" [formGroup]="form">
     <h2 class="form-signin-heading">Авторизируйтесь</h2>
-    <small>{{user?.message}}</small>
+    <small class="form-text text-danger mb-2">{{user?.message}}</small>
+    <small *ngIf="isControlInvalid('email')" class="form-text text-danger pb-2">не правельный формат почты</small>
     <label for="email" class="sr-only">Email address</label>
     <input formControlName="email" type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+    
     <label for="password" class="sr-only">Password</label>
-    <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password" required>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Запомнить меня
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">войти</button>
+    <input formControlName="password" type="password" id="password" class="form-control mb-0" placeholder="Password" required>
+    <small *ngIf="isControlInvalid('password')" class="form-text text-danger mt-2">введите пароль</small>
+  
+    <button class="btn btn-lg btn-primary btn-block mt-4" type="submit" (click)="login()">войти</button>
   </form>
 
 </div>

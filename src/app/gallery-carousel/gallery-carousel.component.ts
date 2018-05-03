@@ -50,12 +50,6 @@ export class GalleryCarouselComponent implements OnInit {
     ]
   };
 
-
-
-
-  //afterChange(e) {
-  //  console.log('afterChange', e);
-  //}
   constructor() { }
 
   ngOnInit() {

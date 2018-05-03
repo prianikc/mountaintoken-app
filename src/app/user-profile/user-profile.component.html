@@ -1,3 +1,75 @@
-<div class="container">
-  {{data?.users[0]?.email}}
+<div class="wraper d-flex justify-content-center d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-md-right text-center">
+        <img class="" src="../../assets/img/user.svg" alt="user-avatar" style="width: 200px">
+      </div>
+      <div class="col-md-6 text-md-left text-center">
+        <h1>{{data?.users[0]?.first_name}} {{data?.users[0]?.last_name}}</h1>
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="first-name col-6 text-right">
+        <p>
+          <strong>Имя:</strong>
+        </p>
+      </div>
+      <div class="col-6 text-left">
+        <p>{{data?.users[0]?.first_name}}</p>
+      </div>
+      <div class="last-name col-6 text-right">
+        <p>
+          <strong>Фамилия:</strong>
+        </p>
+      </div>
+      <div class="col-6 text-left">
+        <p>{{data?.users[0]?.last_name}}</p>
+      </div>
+      <div class="user-emial col-6 text-right">
+        <p>
+          <strong>Email:</strong>
+        </p>
+      </div>
+      <div class="col-6 text-left">
+        <p>{{data?.users[0]?.email}}</p>
+
+      </div>
+      <div class="user-phone col-6 text-right">
+        <p>
+          <strong>Телефон:</strong>
+        </p>
+      </div>
+      <div class="col-6 text-left">
+        <p>{{data?.users[0]?.phone_number}}</p>
+      </div>
+      <div class="user_smartkontract col-6 text-right">
+        <p>
+          <strong> Smartkontract ключ:</strong>
+        </p>
+      </div>
+      <div class="col-6 text-left">
+        <p>{{data?.users[0]?.smartkontract_id}}</p>
+      </div>
+      <div class="user-country col-6 text-right">
+        <p>
+          <strong>Страна:</strong>
+        </p>
+      </div>
+      <div class="col-6 text-left">
+        <p>{{data?.users[0]?.country}}</p>
+      </div>
+      <div class="user-city col-6 text-right">
+        <p>
+          <strong>Город:</strong>
+        </p>
+      </div>
+      <div class="col-6 text-left">
+        <p>{{data?.users[0]?.city}}</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12"></div>
+        <a class="d-block btn btn-primary mt-3" routerLink="/edit-profile">Редактировать</a>
+    </div>
+  </div>
 </div>

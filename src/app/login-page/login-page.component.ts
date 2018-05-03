@@ -21,25 +21,42 @@ export class LoginPageComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router) {
+    private router: Router) { }
 
+    private initForm(): void {
     this.form = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      // type: null,
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]]
     });
   }
-  login() {
-    const val = this.form.value;
-    if (val.email && val.password) {
-      this.authService.login(val.email, val.password)
-        .subscribe(user => {
-          this.user = user;
-          console.log(user);
-          // this.router.navigateByUrl('/users');
-        });
-    }
+
+  isControlInvalid(controlName: string): boolean {
+    const control = this.form.controls[controlName];
+
+    const result: boolean = control.invalid && control.touched;
+
+    return result;
   }
-  ngOnInit() {
+login() {
+  const val = this.form.value;
+  const controls = this.form.controls;
+  if (this.form.invalid) {
+    Object.keys(controls)
+      .forEach(controlName => controls[controlName].markAsTouched());
+    return;
+  } else {
+    this.authService.login(val.email, val.password)
+      .subscribe(user => {
+        this.user = user;
+        if (this.user.loginStatus) {
+          this.router.navigate(['profile']);
+        }
+      });
   }
+}
+ngOnInit() {
+  this.initForm();
+}
 
 }

@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('', usersRoutes);
+app.use('/', usersRoutes);
 
 
 app.use((req, res, next) => {

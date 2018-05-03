@@ -10,8 +10,6 @@ import { AppComponent } from './app.component';
 
 import { GuestPageComponent } from './guest-page/guest-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { UsersComponent } from './users/users.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GalleryCarouselComponent } from './gallery-carousel/gallery-carousel.component';
@@ -27,6 +25,7 @@ import { AuthInterceptor } from './auth-interceptor';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './auth-guard.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 
 
 @NgModule({
@@ -35,13 +34,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     NavbarComponent,
     GuestPageComponent,
     SignupPageComponent,
-    HomePageComponent,
     PageNotFoundComponent,
-    UsersComponent,
     GalleryCarouselComponent,
     FooterComponent,
     LoginPageComponent,
     UserProfileComponent,
+    EditUserProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,9 +3,36 @@ const router = express.Router();
 const config = require('../configDB');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
-
 const checkAuth = require('../middleware/check-auth');
+
+router.post('/profile/:id', checkAuth, (req, res) => {
+  let id = req.params.id;
+  let sql = 'UPDATE users SET ? WHERE id = ?';
+  const user = {
+    email: req.body.email,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    phone_number: req.body.phone_number,
+    smartkontract_id: req.body.smartkontract_id,
+    country: req.body.country,
+    city: req.body.city
+  };
+  config.query(sql, [user, id], (err) => {
+    if (err) {
+      res.status(500).json({
+        message: err
+      });
+      return;
+    }
+    res.status(200).json({
+      succes: true,
+      'Error': false,
+      message: 'Success'
+    });
+  });
+  
+});
+
 
 router.get('/users/:id', checkAuth, (req, res) => {
   const id = req.params.id;
@@ -41,7 +68,6 @@ router.get('/users', checkAuth, (req, res) => {
     }
   });
 });
-
 
 router.post('/signup', (req, res) => {
 
@@ -116,7 +142,7 @@ router.post('/login', (req, res) => {
     if (user.length < 1) {
       res.json({
         succes: false,
-        message: "Нет такой почты!"
+        message: "Почта не зарегистрирована !"
       });
       console.log('mail missing!!!!');
       return;

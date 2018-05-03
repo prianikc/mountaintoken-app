@@ -17,7 +17,7 @@ section, header, footer {
   padding: 0;
 }
 
-a {
+.top-nav-link {
   color: white;
   outline: none;
   &:hover, &:active, &:focus {
@@ -33,6 +33,8 @@ h1,h2,h3,h4,h5 {
   font-style: normal;
   letter-spacing: 2.8px;
   line-height: 58px;
+  margin: 0;
+  padding: 0;
 
 }
 ul {

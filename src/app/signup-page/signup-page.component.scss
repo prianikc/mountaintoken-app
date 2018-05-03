@@ -1,3 +1,11 @@
-.wraper {
-    height: 80vh;
+@import "~bootstrap/scss/bootstrap-grid";
+@import "../../assets/scss/helpers";
+
+// Media
+
+
+@include media-breakpoint-down(sm) {
+    .wraper {
+        height: 100%;
+    } 
 }
