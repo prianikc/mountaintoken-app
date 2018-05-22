@@ -22,10 +22,21 @@ import { AuthService } from './auth.service';
 
 import { AuthInterceptor } from './auth-interceptor';
 
-import { JwtModule } from '@auth0/angular-jwt';
+import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
 import { AuthGuardService } from './auth-guard.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
+import { ParseInterceptor } from './parse-interseptor';
+
+export function gettoken() {
+  return localStorage.getItem('id_token');
+}
+const jwtConf: JwtModuleOptions = {
+  config: {
+    tokenGetter: gettoken,
+    whitelistedDomains: ['lockalhost:3000']
+  }
+};
 
 
 @NgModule({
@@ -48,13 +59,7 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
     FormsModule,
     ReactiveFormsModule,
     SlickModule.forRoot(),
-    JwtModule.forRoot({
-        config: {
-          tokenGetter: () => {
-            return localStorage.getItem('id_token');
-          }
-        }
-      })
+    JwtModule.forRoot(jwtConf)
   ],
   providers: [
     MntApiService,

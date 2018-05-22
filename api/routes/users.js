@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/check-auth');
 
+
 router.post('/profile/:id', checkAuth, (req, res) => {
   let id = req.params.id;
   let sql = 'UPDATE users SET ? WHERE id = ?';
@@ -34,15 +35,19 @@ router.post('/profile/:id', checkAuth, (req, res) => {
 });
 
 
-router.get('/users/:id', checkAuth, (req, res) => {
+router.get('/profile/:id', checkAuth, (req, res) => {
   const id = req.params.id;
   let sql = 'SELECT * FROM users WHERE id = ?';
-  config.query(sql, id, (err, users) => {
-    if (users) {
-      res.status(200).json({
-        users: users
-      });
+  config.query(sql, id, (err, user) => {
+    console.log(user);
+    const response = {
+      'user': user,
+      'status': 200
+    };
+    if (user) {
+      res.send(response);
     } else {
+      console.log(err);
       res.status(404);
     }
   });

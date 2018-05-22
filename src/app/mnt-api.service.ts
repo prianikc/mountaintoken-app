@@ -20,6 +20,6 @@ export class MntApiService {
     return this._http.post<any>(this.mntAPI + '/profile/' + id, user);
   }
   getById(id: string): Observable<any>  {
-    return this._http.get<any>(this.mntAPI + '/users/' + id);
+    return this._http.get<any>(this.mntAPI + '/profile/' + id);
 }
 }

@@ -12,9 +12,16 @@ import * as jwt_decode from 'jwt-decode';
 })
 export class UserProfileComponent implements OnInit {
   public data: {
-    users: [
+    user: [
       {
-        email: string
+        email?: string;
+        password?: string;
+        first_name?: string;
+        last_name?: string;
+        phone_number?: string;
+        smartkontract_id?: string;
+        country?: string;
+        city?: string;
       }
     ]
   };

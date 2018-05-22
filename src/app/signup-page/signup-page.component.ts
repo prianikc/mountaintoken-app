@@ -71,12 +71,13 @@ export class SignupPageComponent implements OnInit {
       if (!val.email && !val.password) {
         return;
       }
-      const dataUser = this.myForm.value;
-      return this.mntApiService.addUser(dataUser)
+      const dataUser = val;
+       this.mntApiService.addUser(dataUser)
         .subscribe(user => {
           this.user = user;
           if (user.sacces) {
             this.routes.navigate(['login']);
+            return;
           }
         });
     }

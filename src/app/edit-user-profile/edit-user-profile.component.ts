@@ -18,7 +18,7 @@ export class EditUserProfileComponent implements OnInit {
     status: number
   };
   public data: {
-    users: [
+    user: [
       {
         email: string,
         first_name: string,
