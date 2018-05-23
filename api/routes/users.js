@@ -31,24 +31,26 @@ router.post('/profile/:id', checkAuth, (req, res) => {
       message: 'Success'
     });
   });
-  
+
 });
 
 
-router.get('/profile/:id', checkAuth, (req, res) => {
+router.get('/profile/:id', (req, res) => {
   const id = req.params.id;
+  console.log(id);
   let sql = 'SELECT * FROM users WHERE id = ?';
+
   config.query(sql, id, (err, user) => {
     console.log(user);
-    const response = {
-      'user': user,
-      'status': 200
-    };
-    if (user) {
-      res.send(response);
+    if (err) {
+      res.status(500).jsonp({
+      //  message: err
+      });
+      return;
     } else {
-      console.log(err);
-      res.status(404);
+      res.status(200).jsonp({
+       // user: user
+      });
     }
   });
 });
