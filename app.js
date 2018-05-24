@@ -10,10 +10,12 @@ const usersRoutes = require('./api/routes/users');
 app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/guest', express.static(path.join(__dirname, 'dist')));
+app.use('/signup', express.static(path.join(__dirname, 'dist')));
+app.use('/profile', express.static(path.join(__dirname, 'dist')));
+app.use('/edit-profile', express.static(path.join(__dirname, 'dist')));
+app.use('/login', express.static(path.join(__dirname, 'dist')));
 
-app.get('*', (req, res ) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
 
 app.use(bodyParser.urlencoded({
   extended: true

@@ -37,25 +37,24 @@ router.post('/profile/:id', checkAuth, (req, res) => {
 
 router.get('/profile/:id', (req, res) => {
   const id = req.params.id;
-  console.log(id);
   let sql = 'SELECT * FROM users WHERE id = ?';
 
   config.query(sql, id, (err, user) => {
-    console.log(user);
     if (err) {
-      res.status(500).jsonp({
-      //  message: err
+      res.status(500).json({
+       message: err
       });
       return;
     } else {
-      res.status(200).jsonp({
-       // user: user
+      res.status(200).json({
+       user: user
       });
     }
   });
 });
 
 router.get('/users', checkAuth, (req, res) => {
+  
   let sql = 'SELECT email, id FROM users';
   config.query(sql, (err, rows) => {
     if (err) {

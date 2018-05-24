@@ -1,6 +1,5 @@
 @import "~bootstrap/scss/bootstrap-grid";
 @import "../../assets/scss/helpers";
-
 header {
   background-image: url('../../assets/img/header-bg.jpg');
   min-height: 765px;
@@ -9,11 +8,14 @@ header {
   background-repeat: no-repeat;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid white;
 }
 
-th, td {
+th,
+td {
   padding: 7px;
 }
 
@@ -42,7 +44,7 @@ section.stonemarket {
     width: 100%;
   }
   img.stonemarket-scheme {
-    width: 70%;
+    width: 50%;
   }
   h2 {
     position: relative;
@@ -65,7 +67,7 @@ section.career {
 
 section.how-it-work {
   img {
-    width: 70%;
+    width: 50%;
   }
 }
 
@@ -80,29 +82,37 @@ section.mnt-ico {
   }
 }
 
+section.maps {
+  img {
+    width: 100%;
+  }
+  .map-oval {
+    width: 80%;
+  }
+}
+
 // Breakpoints //
-
 @include media-breakpoint-down(md) {
-
   .fz-60 {
     font-size: 50px;
     line-height: 1.4;
     letter-spacing: 1.6px;
   }
-
   .fz-48 {
     font-size: 35px;
   }
-
-  section.career p.subtitle {
-    font-size: 20px;
+  section.career {
+    min-height: 581px;
+    p.subtitle {
+      font-size: 20px;
+    }
   }
-
   section.mnt-scheme {
     img {
       width: 300px;
     }
   }
+  
 }
 
 @include media-breakpoint-down(sm) {
@@ -117,7 +127,6 @@ section.mnt-ico {
   .py-85 {
     padding: 50px 0;
   }
-
   section.stonemarket {
     .bg-gray {
       top: -170px;
@@ -136,6 +145,14 @@ section.mnt-ico {
     }
     .fz-24 {
       font-size: 12px;
+    }
+  }
+  section.maps {
+    .map {
+      width: 50%;
+    }
+    .map-oval {
+      width: 50%;
     }
   }
 }

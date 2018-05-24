@@ -26,7 +26,6 @@ import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
 import { AuthGuardService } from './auth-guard.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
-import { ParseInterceptor } from './parse-interseptor';
 
 export function gettoken() {
   return localStorage.getItem('id_token');
