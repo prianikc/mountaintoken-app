@@ -8,8 +8,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-   "install": "node-pre-gyp install --fallback-to-build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -47,8 +46,6 @@
     "slick-carousel": "^1.8.1",
     "zone.js": "^0.8.19"
   },
-  "bundledDependencies":["node-pre-gyp"],
-    
   "devDependencies": {
     "@angular/cli": "~1.7.2",
     "@angular/compiler-cli": "^5.2.0",
