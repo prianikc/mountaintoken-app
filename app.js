@@ -7,7 +7,7 @@ const path = require('path');
 const usersRoutes = require('./api/routes/users');
 
 
-app.use(morgan('dev'));
+app.use(morgan('prod'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/guest', express.static(path.join(__dirname, 'dist')));
