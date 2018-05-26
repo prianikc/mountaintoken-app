@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="557px" height="325px" viewBox="0 0 557 325" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 15</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mountaintoken" transform="translate(-751.000000, -7932.000000)">
+            <g id="Group-15" transform="translate(750.000000, 7906.000000)">
+                <g id="Group-14" transform="translate(0.000000, 22.000000)">
+                    <text id="53%-инвестиции-в-раз" font-family="ApercuPro-Regular, Apercu Pro" font-size="18" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="0" y="18">53% инвестиции в разработку</tspan>
+                    </text>
+                    <text id="7%-операционные-расх" font-family="ApercuPro-Regular, Apercu Pro" font-size="18" font-weight="normal" line-spacing="38" fill="#FFFFFF">
+                        <tspan x="316" y="28">7% операционные расходы</tspan>
+                    </text>
+                    <text id="4%-юридические-расхо" font-family="ApercuPro-Regular, Apercu Pro" font-size="18" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="316" y="96">4% юридические расходы</tspan>
+                    </text>
+                    <text id="30%-StoneMarket" font-family="ApercuPro-Regular, Apercu Pro" font-size="18" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="316" y="160">30% StoneMarket</tspan>
+                    </text>
+                    <text id="6%-резерв" font-family="ApercuPro-Regular, Apercu Pro" font-size="18" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="316" y="224">6% резерв</tspan>
+                    </text>
+                    <circle id="Oval-2-Copy" fill="#FFFFFF" cx="131" cy="203" r="126"></circle>
+                    <path d="M57.5,132.5 L2.5,33.5" id="Line-7-Copy-9" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M304.5,41.5 L173.5,88.5" id="Line-7-Copy-5" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M304.5,105.5 L228.5,121.5" id="Line-7-Copy-6" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M304.5,168.5 L248.5,177.5" id="Line-7-Copy-7" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M305.5,232.5 L230.5,276.5" id="Line-7-Copy-8" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M2.5,33.5 L259.517509,33.5" id="Line-8-Copy-5" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M305.5,41.5 L556.5,41.5" id="Line-8-Copy-6" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M305.5,105.5 L556.507968,105.5" id="Line-8-Copy-7" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M305.5,168.5 L556.5,168.5" id="Line-8-Copy-8" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M305.5,232.5 L556.5,232.5" id="Line-8-Copy-9" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    <path d="M168.5,86.5 L130.5,203.5" id="Line-6-Copy" stroke="#46709A" stroke-width="7" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                    <path d="M217.5,290.5 L130.5,206.5" id="Line-6-Copy-2" stroke="#46709A" stroke-width="7" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                    <path d="M240.5,258.5 L130.5,206.5" id="Line-6-Copy-3" stroke="#46709A" stroke-width="7" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                    <path d="M234.5,137.5 L132.5,205.5" id="Line-6-Copy-4" stroke="#46709A" stroke-width="7" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                    <path d="M213.5,112.5 L133.5,199.5" id="Line-6-Copy-5" stroke="#46709A" stroke-width="7" stroke-linecap="round" stroke-linejoin="bevel"></path>
+                </g>
+                <rect id="Rectangle-9" x="2" y="0" width="255" height="56"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
