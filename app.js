@@ -8,7 +8,7 @@ require('dotenv').config();
 const usersRoutes = require('./api/routes/users');
 
 
-app.use(morgan('prod'));
+app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/guest', express.static(path.join(__dirname, 'dist')));
