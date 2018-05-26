@@ -12,6 +12,12 @@
     "e2e": "ng e2e",
     "install": "node-pre-gyp install --fallback-to-build"
   },
+  "binary": {
+    "module_name": "bcrypt_lib",
+    "module_path": "./home/master/apps/mountaintoken-app/node_modules/bcrypt/lib/binding/",
+    "host": "https://github.com/kelektiv/node.bcrypt.js",
+    "remote_path": "./v{version}/"
+  },
   "private": true,
   "bundledDependencies": [
     "node-pre-gyp"
