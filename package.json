@@ -2,15 +2,20 @@
   "name": "mountaintoken-app",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "./index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "install": "node-pre-gyp install --fallback-to-build"
   },
   "private": true,
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
