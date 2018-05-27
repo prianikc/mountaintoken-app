@@ -807,7 +807,7 @@ var MntApiService = /** @class */ (function () {
     function MntApiService(_http) {
         this._http = _http;
         this.data = [];
-        this.mntAPI = '138.197.190.24:3000';
+        this.mntAPI = 'http://localhost:3000';
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({
             'Accept': 'text/html' // <-- add this
         });

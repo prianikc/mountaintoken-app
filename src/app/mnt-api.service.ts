@@ -7,9 +7,7 @@ import { User } from './user';
 export class MntApiService {
   private data: any = [];
   private mntAPI = '138.197.190.24:3000';
-  headers = new HttpHeaders({
-    'Accept': 'text/html'  // <-- add this
-  });
+
 
   constructor(private _http: HttpClient) {
   }
@@ -27,7 +25,7 @@ export class MntApiService {
   }
 
   getById(id: string): Observable<any> {
-    return this._http.get<any>(this.mntAPI + '/profile/' + id, { headers: this.headers })
+    return this._http.get<any>(this.mntAPI + '/profile/' + id)
       .catch(this.handleError);
   }
 
