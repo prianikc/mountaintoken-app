@@ -343,7 +343,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(_http, jwtHelper) {
         this._http = _http;
         this.jwtHelper = jwtHelper;
-        this.mntAPI = '138.197.190.24:3000';
+        this.mntAPI = 'https://138.197.190.24:3000';
     }
     AuthService.prototype.isAuthenticated = function () {
         var token = localStorage.getItem('id_token');
@@ -807,7 +807,7 @@ var MntApiService = /** @class */ (function () {
     function MntApiService(_http) {
         this._http = _http;
         this.data = [];
-        this.mntAPI = '138.197.190.24:3000';
+        this.mntAPI = 'https://138.197.190.24:3000';
     }
     MntApiService.prototype.getUsers = function () {
         return this._http.get(this.mntAPI + '/users');

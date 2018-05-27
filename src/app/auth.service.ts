@@ -7,7 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable()
 export class AuthService {
-  private mntAPI = '138.197.190.24:3000';
+  private mntAPI = 'https://138.197.190.24:3000';
   private res: {
     message: string
     token: string,
