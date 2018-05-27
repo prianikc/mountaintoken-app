@@ -6,7 +6,7 @@ import { User } from './user';
 @Injectable()
 export class MntApiService {
   private data: any = [];
-  private mntAPI = 'https://138.197.190.24:3000';
+  private mntAPI = 'https://138.197.190.24';
 
 
   constructor(private _http: HttpClient) {
