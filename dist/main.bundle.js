@@ -343,7 +343,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(_http, jwtHelper) {
         this._http = _http;
         this.jwtHelper = jwtHelper;
-        this.mntAPI = 'http://localhost:3000';
+        this.mntAPI = '138.197.190.24:3000';
     }
     AuthService.prototype.isAuthenticated = function () {
         var token = localStorage.getItem('id_token');
@@ -807,10 +807,7 @@ var MntApiService = /** @class */ (function () {
     function MntApiService(_http) {
         this._http = _http;
         this.data = [];
-        this.mntAPI = 'http://localhost:3000';
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({
-            'Accept': 'text/html' // <-- add this
-        });
+        this.mntAPI = '138.197.190.24:3000';
     }
     MntApiService.prototype.getUsers = function () {
         return this._http.get(this.mntAPI + '/users');
@@ -822,7 +819,7 @@ var MntApiService = /** @class */ (function () {
         return this._http.post(this.mntAPI + '/profile/' + id, user);
     };
     MntApiService.prototype.getById = function (id) {
-        return this._http.get(this.mntAPI + '/profile/' + id, { headers: this.headers })
+        return this._http.get(this.mntAPI + '/profile/' + id)
             .catch(this.handleError);
     };
     MntApiService.prototype.handleError = function (err) {
