@@ -807,7 +807,7 @@ var MntApiService = /** @class */ (function () {
     function MntApiService(_http) {
         this._http = _http;
         this.data = [];
-        this.mntAPI = 'https://localhost:3000';
+        this.mntAPI = 'https://mountaintoken.net';
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({
             'Accept': 'text/html' // <-- add this
         });
