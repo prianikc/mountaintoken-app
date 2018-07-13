@@ -1,17 +1,21 @@
 <footer class="accent-bg-dark text-white">
-<div class="container">
-  <div class="row py-5 d-flex justify-content-between">
-    <div class="col-md-3 text-lg-left text-center align-self-center">
-      <a class="text-white navbar-brand" routerLink="/">
-      <img style="height: 30px;" src="../../assets/img/logo-white.svg" alt=""> mountaintoken
-    </a>
-    </div>
-    <div class="col-md-6 text-center align-self-center">
-      <a class="top-nav-link pr-2" routerLink="/">главная</a> |
-      <a class="top-nav-link px-2" routerLink="/login">вход</a> |
-      <a class="top-nav-link px-2" routerLink="/signup">регистрация</a>
-    </div>
-    <div class="col-md-3 text-lg-right text-center align-self-center fz-24">
+  <div class="container">
+    <div class="row py-5 d-flex justify-content-between">
+      <div class="col-md-3 text-lg-left text-center align-self-center">
+        <a class="text-white navbar-brand" routerLink="/">
+          <img style="height: 30px;" src="../../assets/img/logo-white.svg" alt=""> mountaintoken
+        </a>
+      </div>
+      <div class="col-md-6 text-center align-self-center">
+        <a class="top-nav-link px-2" routerLink="/">главная</a> | 
+        <a class="top-nav-link px-2" routerLink="/about-us">о нас</a> | 
+        <a class="top-nav-link px-2" routerLink="/mountaintoken-page">токен</a> | 
+        <a *ngIf="!authGuard.canActivate()" class="top-nav-link px-2" routerLink="/login">вход</a>
+        <span *ngIf="authGuard.canActivate()" class="top-nav-link px-2" (click)="logOut()">выход</span> |
+        <a class="top-nav-link px-2" routerLink="/signup">регистрация</a>
+      </div>
+      <div class="col-md-3 text-lg-right text-center align-self-center fz-24">
+        <!--
       <i class="fa fa-twitter pr-3">
 
       </i>
@@ -21,8 +25,8 @@
       <i class="fa fa-facebook pr-3">
 
       </i>
-
+    -->
+      </div>
     </div>
   </div>
-</div>
 </footer>

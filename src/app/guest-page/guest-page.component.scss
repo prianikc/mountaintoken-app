@@ -53,7 +53,7 @@ section.stonemarket {
 }
 
 section.career {
-  background-image: url('../../assets/img/mountain-rock.png');
+  background-image: url('../../assets/img/mountain-rock.jpg');
   min-height: 811px;
   background-position: top center;
   background-size: cover;
@@ -86,8 +86,19 @@ section.maps {
   img {
     width: 100%;
   }
+  .map {
+    width: 57%;
+  }
   .map-oval {
     width: 80%;
+  }
+  li {
+    font-size: 16px;
+    padding: 0;
+  }
+  p {
+    padding: 4px 0;
+    margin: 0;
   }
 }
 

@@ -26,6 +26,10 @@ import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
 import { AuthGuardService } from './auth-guard.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
+import { ChangePassComponent } from './change-pass/change-pass.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { MountaintokenPageComponent } from './mountaintoken-page/mountaintoken-page.component';
+import { GalleryCarierComponent } from './gallery-carier/gallery-carier.component';
 
 export function gettoken() {
   return localStorage.getItem('id_token');
@@ -50,6 +54,10 @@ const jwtConf: JwtModuleOptions = {
     LoginPageComponent,
     UserProfileComponent,
     EditUserProfileComponent,
+    ChangePassComponent,
+    AboutUsComponent,
+    MountaintokenPageComponent,
+    GalleryCarierComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,8 +77,9 @@ const jwtConf: JwtModuleOptions = {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

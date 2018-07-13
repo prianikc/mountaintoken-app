@@ -47,6 +47,10 @@ li {
   line-height: 32px;
   padding: 10px 0;
 }
+
+.slick-prev, .slick-arrow, .slick-next {
+  top: 115px !important;
+}
 .slick-prev:before, .slick-next:before {
   color: $accent-color !important;
 }

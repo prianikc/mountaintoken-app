@@ -1,0 +1,19 @@
+<div class="wraper d-flex justify-content-center align-items-center">
+  <div class="container">
+  
+  
+    <form class="form-signin" [formGroup]="form">
+      <h2 class="form-signin-heading">Смена пароля</h2>
+      <small *ngIf="isControlInvalid('password')" class="form-text text-danger pb-2">ведите новый пароль</small>
+      <label for="password" class="sr-only">новый пароль</label>
+      <input formControlName="password" type="password" id="password" class="form-control" placeholder="новый пароль" required autofocus>
+      
+      <label for="repeatPassword" class="sr-only">повторите пароль</label>
+      <input formControlName="repeatPassword" type="password" id="repeatPassword" class="form-control mb-0" placeholder="повторите пароль" required>
+      <small *ngIf="isControlInvalid('repeatPassword')" class="form-text text-danger mt-2">повторите пароль</small>
+    
+      <button [disabled]="!form.valid" class="btn btn-lg btn-primary btn-block mt-4" type="submit" (click)="changePass()">сменить пароль</button>
+    </form>
+  
+  </div>
+  </div>

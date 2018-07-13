@@ -2,7 +2,9 @@
 @import "../../assets/scss/helpers";
 
 // Media
-
+.wraper {
+    min-height: 750px;
+} 
 
 @include media-breakpoint-down(sm) {
     .wraper {

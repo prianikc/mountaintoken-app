@@ -15,7 +15,12 @@ export class GalleryCarouselComponent implements OnInit {
     {img: '../assets/img/gallery/gallery-img-4.jpg'},
     {img: '../assets/img/gallery/gallery-img-5.jpg'},
     {img: '../assets/img/gallery/gallery-img-6.jpg'},
-    {img: '../assets/img/gallery/gallery-img-7.jpg'}
+    {img: '../assets/img/gallery/gallery-img-7.jpg'},
+    {img: '../assets/img/gallery/gallery-img-8.jpg'},
+    {img: '../assets/img/gallery/gallery-img-9.jpg'},
+    {img: '../assets/img/gallery/gallery-img-10.jpg'},
+    {img: '../assets/img/gallery/gallery-img-11.jpg'},
+    {img: '../assets/img/gallery/gallery-img-12.jpg'},
   ];
   slideConfig = {
     slidesToShow: 3,

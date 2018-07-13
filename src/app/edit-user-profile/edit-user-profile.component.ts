@@ -24,6 +24,7 @@ export class EditUserProfileComponent implements OnInit {
         first_name: string,
         last_name: string,
         password: string,
+        phone_number: string,
         smartkontract_id: string,
         city: string,
         country: string

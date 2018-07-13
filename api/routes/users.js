@@ -5,7 +5,39 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/check-auth');
 
+router.post('/change-pass/:id', checkAuth, (req, res) => {
+  let id = req.params.id;
+  
+  bcrypt.hash(req.body.password, 10, (err, hash) => {
+    const rightResponse = {
+      'sacces': true,
+    };
+    if (err) {
+      console.log(err);
+      return res.status(500).json({
+        error: err
+      });
+    } else {
+      let sql = 'UPDATE users SET ? WHERE id = ?';
+      const user = {
+        password: hash,
+      };
+      config.query(sql, [user, id], (err) => {
+        if (err) {
+          console.log(err);
+          res.json({
+            "message": 'SQL Error'
+          });
+        } else {
+          res.send(rightResponse);
+          console.log('password change');
+          return;
+        }
+      });
+    }
+  });
 
+});
 router.post('/profile/:id', checkAuth, (req, res) => {
   let id = req.params.id;
   let sql = 'UPDATE users SET ? WHERE id = ?';
@@ -35,51 +67,29 @@ router.post('/profile/:id', checkAuth, (req, res) => {
 });
 
 
-router.get('/profile/:id', (req, res) => {
+router.get('/profile/:id', checkAuth, (req, res) => {
   const id = req.params.id;
   let sql = 'SELECT * FROM users WHERE id = ?';
 
   config.query(sql, id, (err, user) => {
     if (err) {
       res.status(500).json({
-       message: err
+        message: err
       });
       return;
     } else {
       res.status(200).json({
-       user: user
+        user: user
       });
     }
   });
 });
 
-router.get('/users', checkAuth, (req, res) => {
-  
-  let sql = 'SELECT email, id FROM users';
-  config.query(sql, (err, rows) => {
-    if (err) {
-      res.json({
-        'Error': true,
-        message: 'Error Execute Sql'
-      });
-      console.log(err);
-    } else {
-      res.status(200).json({
-        'Error': false,
-        message: 'Success',
-        'Users': rows
-      });
-      console.log('Users list completed');
-
-    }
-  });
-});
 
 router.post('/signup', (req, res) => {
 
   let sql = 'SELECT email FROM users WHERE email = ?';
   let emailBody = [req.body.email];
-
   config.query(sql, emailBody, (err, userEmail) => {
     const errResponse = {
       'sacces': false,

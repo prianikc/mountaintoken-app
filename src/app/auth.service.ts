@@ -8,6 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable()
 export class AuthService {
   private mntAPI = 'https://mountaintoken.net';
+  private homeAPI = 'http://localhost:3000';
   private res: {
     message: string
     token: string,
@@ -26,7 +27,7 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<any> {
-    return this._http.post<any>(this.mntAPI + '/login', { email, password })
+    return this._http.post<any>(this.homeAPI + '/login', { email, password })
       .do(res => {
         this.res = res;
         if (res.loginStatus === true) {
@@ -35,7 +36,10 @@ export class AuthService {
       })
       .shareReplay();
   }
+  changePass(id, password: string): Observable<any> {
+    return this._http.post<any>(this.homeAPI + '/change-pass/' + id, { password });
 
+  }
   logout() {
     localStorage.removeItem('id_token');
   }

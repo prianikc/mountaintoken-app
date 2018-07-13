@@ -77,3 +77,9 @@ $accent-gray-dark: #4A4A4A;
 .wraper {
   height: 79.3vh;
 }
+.line-2 {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: $accent-color;
+}
