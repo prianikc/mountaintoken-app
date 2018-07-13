@@ -17,15 +17,15 @@ export class MntApiService {
   }
 
   addUser(user: User): Observable<any> {
-    return this._http.post<any>(this.homeAPI + '/signup', user);
+    return this._http.post<any>(this.mntAPI + '/signup', user);
   }
 
   addEditUser(id, user: User): Observable<any> {
-    return this._http.post<any>(this.homeAPI + '/profile/' + id, user);
+    return this._http.post<any>(this.mntAPI + '/profile/' + id, user);
   }
 
   getById(id: string): Observable<any> {
-    return this._http.get<any>(this.homeAPI + '/profile/' + id)
+    return this._http.get<any>(this.mntAPI + '/profile/' + id)
       .catch(this.handleError);
   }
 

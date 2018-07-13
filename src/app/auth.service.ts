@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<any> {
-    return this._http.post<any>(this.homeAPI + '/login', { email, password })
+    return this._http.post<any>(this.mntAPI + '/login', { email, password })
       .do(res => {
         this.res = res;
         if (res.loginStatus === true) {
@@ -37,7 +37,7 @@ export class AuthService {
       .shareReplay();
   }
   changePass(id, password: string): Observable<any> {
-    return this._http.post<any>(this.homeAPI + '/change-pass/' + id, { password });
+    return this._http.post<any>(this.mntAPI + '/change-pass/' + id, { password });
 
   }
   logout() {
