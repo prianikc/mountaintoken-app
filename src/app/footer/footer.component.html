@@ -8,8 +8,8 @@
       </div>
       <div class="col-md-6 text-center align-self-center">
         <a class="top-nav-link px-2" routerLink="/">главная</a> | 
-        <a class="top-nav-link px-2" routerLink="/about-us">о нас</a> | 
-        <a class="top-nav-link px-2" routerLink="/mountaintoken-page">токен</a> | 
+      <!--  <a class="top-nav-link px-2" routerLink="/about-us">о нас</a> | 
+        <a class="top-nav-link px-2" routerLink="/mountaintoken-page">токен</a> | -->
         <a *ngIf="!authGuard.canActivate()" class="top-nav-link px-2" routerLink="/login">вход</a>
         <span *ngIf="authGuard.canActivate()" class="top-nav-link px-2" (click)="logOut()">выход</span> |
         <a class="top-nav-link px-2" routerLink="/signup">регистрация</a>
