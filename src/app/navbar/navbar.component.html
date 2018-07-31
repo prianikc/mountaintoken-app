@@ -21,8 +21,8 @@
         </li>-->
       </ul>
       <a (click)="toggleCollapse()" class="top-nav-link block pr-3 pl-3 pl-lg-0" routerLink="/" routerLinkActive="active">главная</a>
-    <!--  <a (click)="toggleCollapse()" class="top-nav-link d-block pt-lg-0 pl-3 pl-lg-0 pr-3" routerLink="/about-us">о нас</a>
-      <a (click)="toggleCollapse()" class="top-nav-link d-block pt-lg-0 pl-3 pl-lg-0 pr-3" routerLink="/mountaintoken-page">токен</a> -->
+     <a (click)="toggleCollapse()" class="top-nav-link d-block pt-lg-0 pl-3 pl-lg-0 pr-3" routerLink="/about-us">о нас</a>
+      <!-- <a (click)="toggleCollapse()" class="top-nav-link d-block pt-lg-0 pl-3 pl-lg-0 pr-3" routerLink="/mountaintoken-page">токен</a> -->
       <a (click)="toggleCollapse()" *ngIf="authGuard.canActivate()" class="top-nav-link d-block pr-3 pl-3 pl-lg-0" routerLink="/profile" routerLinkActive="active">профайл</a>
       <a (click)="toggleCollapse()" *ngIf="!authGuard.canActivate()" class="top-nav-link d-block pr-3 pl-3 pl-lg-0" routerLink="/login">вход</a>
       <div *ngIf="authGuard.canActivate()" class="top-nav-link d-block pr-3 pl-3 pl-lg-0" (click)="logOut()">выход</div>
