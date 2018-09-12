@@ -1,5 +1,6 @@
 @import "~bootstrap/scss/bootstrap-grid";
 @import "../../assets/scss/helpers";
+
 header {
   background-image: url('../../assets/img/header-bg.jpg');
   min-height: 765px;
@@ -24,6 +25,7 @@ section.mnt-scheme {
     position: relative;
     top: -10px
   }
+
   img {
     width: 50%;
   }
@@ -34,18 +36,22 @@ section.stonemarket {
     position: relative;
     top: -300px;
   }
+
   img.macbook {
     position: relative;
     z-index: 10;
     width: 100%;
     max-width: 960px;
   }
+
   img.phone-mockup {
     width: 100%;
   }
+
   img.stonemarket-scheme {
     width: 50%;
   }
+
   h2 {
     position: relative;
     top: -130px;
@@ -58,6 +64,7 @@ section.career {
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+
   p.subtitle {
     font-size: 30px;
     color: white;
@@ -75,6 +82,7 @@ section.mnt-ico {
   img.logo-white {
     height: 190px;
   }
+
   img.graff {
     width: 100%;
     padding-top: 10px;
@@ -86,19 +94,36 @@ section.maps {
   img {
     width: 100%;
   }
+
   .map {
     width: 57%;
   }
+
   .map-oval {
     width: 80%;
   }
+
   li {
     font-size: 16px;
     padding: 0;
   }
+
   p {
     padding: 4px 0;
     margin: 0;
+  }
+}
+
+section.it-mountain-group {
+
+
+  .it-mountain-group-content {
+    background-image: url("../../assets/img/it-gray.svg");
+    background-position: center;
+   // background-size: cover;
+    background-repeat: no-repeat;
+    width: 700px;
+    margin: 0 auto;
   }
 }
 
@@ -109,59 +134,72 @@ section.maps {
     line-height: 1.4;
     letter-spacing: 1.6px;
   }
+
   .fz-48 {
     font-size: 35px;
   }
+
   section.career {
     min-height: 581px;
+
     p.subtitle {
       font-size: 20px;
     }
   }
+
   section.mnt-scheme {
     img {
       width: 300px;
     }
   }
-  
+
 }
 
 @include media-breakpoint-down(sm) {
   header {
     min-height: 500px;
   }
+
   .fz-60 {
     font-size: 35px;
     line-height: 1.2;
     letter-spacing: 1.2px;
   }
+
   .py-85 {
     padding: 50px 0;
   }
+
   section.stonemarket {
     .bg-gray {
       top: -170px;
       height: 230px;
     }
+
     h2 {
       top: -70px;
     }
+
     ul {
       margin-left: 15px;
     }
   }
+
   section.road-map {
     .fz-30 {
       font-size: 20px;
     }
+
     .fz-24 {
       font-size: 12px;
     }
   }
+
   section.maps {
     .map {
       width: 50%;
     }
+
     .map-oval {
       width: 50%;
     }
