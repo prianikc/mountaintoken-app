@@ -9,7 +9,7 @@ export class GalleryCarierComponent implements OnInit {
 
   images = [
     {img: '../assets/img/gallery-carier/gallery-img-1.jpg'},
-    {img: '../assets/img/gallery-carier/gallery-img-2.jpg'},
+   // {img: '../assets/img/gallery-carier/gallery-img-2.jpg'},
     {img: '../assets/img/gallery-carier/gallery-img-3.jpg'},
     {img: '../assets/img/gallery-carier/gallery-img-4.jpg'},
     {img: '../assets/img/gallery-carier/gallery-img-5.jpg'},
