@@ -30,6 +30,7 @@ import { ChangePassComponent } from './change-pass/change-pass.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { MountaintokenPageComponent } from './mountaintoken-page/mountaintoken-page.component';
 import { GalleryCarierComponent } from './gallery-carier/gallery-carier.component';
+import { GalleryCarierTopComponent } from './gallery-carier-top/gallery-carier-top.component';
 
 export function gettoken() {
   return localStorage.getItem('id_token');
@@ -58,6 +59,7 @@ const jwtConf: JwtModuleOptions = {
     AboutUsComponent,
     MountaintokenPageComponent,
     GalleryCarierComponent,
+    GalleryCarierTopComponent
   ],
   imports: [
     BrowserModule,
