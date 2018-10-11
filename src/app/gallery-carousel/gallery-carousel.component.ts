@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class GalleryCarouselComponent implements OnInit {
 
   slides = [
-    {img: '../assets/img/gallery/gallery-img-1.jpg'},
-    {img: '../assets/img/gallery/gallery-img-2.jpg'},
+   // {img: '../assets/img/gallery/gallery-img-1.jpg'},
+   // {img: '../assets/img/gallery/gallery-img-2.jpg'},
     {img: '../assets/img/gallery/gallery-img-3.jpg'},
     {img: '../assets/img/gallery/gallery-img-4.jpg'},
     {img: '../assets/img/gallery/gallery-img-5.jpg'},
