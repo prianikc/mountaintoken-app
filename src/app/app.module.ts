@@ -31,7 +31,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MountaintokenPageComponent } from './mountaintoken-page/mountaintoken-page.component';
 import { GalleryCarierComponent } from './gallery-carier/gallery-carier.component';
 import { GalleryCarierTopComponent } from './gallery-carier-top/gallery-carier-top.component';
-import { GalleryAboutUsComponent } from './gallery-ubout-us/gallery-aubout-us.componenta';
+import { GalleryAboutUsComponent } from './gallery-about-us/gallery-about-us.component';
 
 export function gettoken() {
   return localStorage.getItem('id_token');
