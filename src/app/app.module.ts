@@ -32,6 +32,8 @@ import { MountaintokenPageComponent } from './mountaintoken-page/mountaintoken-p
 import { GalleryCarierComponent } from './gallery-carier/gallery-carier.component';
 import { GalleryCarierTopComponent } from './gallery-carier-top/gallery-carier-top.component';
 import { GalleryAboutUsComponent } from './gallery-about-us/gallery-about-us.component';
+import { CarierPageComponent } from './carier-page/carier-page.component';
+import { ProvidingPageComponent } from './providing-page/providing-page.component';
 
 export function gettoken() {
   return localStorage.getItem('id_token');
@@ -61,7 +63,9 @@ const jwtConf: JwtModuleOptions = {
     MountaintokenPageComponent,
     GalleryCarierComponent,
     GalleryCarierTopComponent,
-    GalleryAboutUsComponent
+    GalleryAboutUsComponent,
+    CarierPageComponent,
+    ProvidingPageComponent
   ],
   imports: [
     BrowserModule,

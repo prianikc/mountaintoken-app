@@ -10,12 +10,14 @@ import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.
 import { ChangePassComponent } from './change-pass/change-pass.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { MountaintokenPageComponent } from './mountaintoken-page/mountaintoken-page.component';
+import { ProvidingPageComponent } from './providing-page/providing-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/guest', pathMatch: 'full' },
   { path: 'guest', component: GuestPageComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'mountaintoken-page', component: MountaintokenPageComponent },
+  { path: 'providing', component: ProvidingPageComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'edit-profile', component: EditUserProfileComponent, canActivate: [AuthGuard] },
