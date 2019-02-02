@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gallery-carier',
@@ -9,7 +9,7 @@ export class GalleryCarierComponent implements OnInit {
 
   images = [
     {img: '../assets/img/gallery-carier/gallery-img-1.jpg'},
-   // {img: '../assets/img/gallery-carier/gallery-img-2.jpg'},
+    // {img: '../assets/img/gallery-carier/gallery-img-2.jpg'},
     {img: '../assets/img/gallery-carier/gallery-img-3.jpg'},
     {img: '../assets/img/gallery-carier/gallery-img-4.jpg'},
     {img: '../assets/img/gallery-carier/gallery-img-5.jpg'},
@@ -19,6 +19,7 @@ export class GalleryCarierComponent implements OnInit {
     {img: '../assets/img/gallery-carier/gallery-img-9.jpg'}
   ];
   slideConfig = {
+    autoplay: true,
     slidesToShow: 3,
     arrows: true,
     dots: true,
@@ -51,7 +52,8 @@ export class GalleryCarierComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

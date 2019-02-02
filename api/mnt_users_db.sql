@@ -27,14 +27,14 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
   `password` varchar(200) DEFAULT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `phone_number` varchar(50) DEFAULT NULL,
-  `smartkontract_id` varchar(50) DEFAULT NULL,
-  `country` varchar(50) DEFAULT NULL,
-  `city` varchar(50) DEFAULT NULL,
+  `first_name` varchar(200) DEFAULT NULL,
+  `last_name` varchar(200) DEFAULT NULL,
+  `phone_number` varchar(200) DEFAULT NULL,
+  `smartkontract_id` varchar(200) DEFAULT NULL,
+  `country` varchar(200) DEFAULT NULL,
+  `city` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

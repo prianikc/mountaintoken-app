@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class GalleryCarouselComponent implements OnInit {
 
   slides = [
-   // {img: '../assets/img/gallery/gallery-img-1.jpg'},
-   // {img: '../assets/img/gallery/gallery-img-2.jpg'},
+    // {img: '../assets/img/gallery/gallery-img-1.jpg'},
+    // {img: '../assets/img/gallery/gallery-img-2.jpg'},
     {img: '../assets/img/gallery/gallery-img-3.jpg'},
     {img: '../assets/img/gallery/gallery-img-4.jpg'},
     {img: '../assets/img/gallery/gallery-img-5.jpg'},
@@ -20,12 +20,13 @@ export class GalleryCarouselComponent implements OnInit {
     {img: '../assets/img/gallery/gallery-img-9.jpg'},
     {img: '../assets/img/gallery/gallery-img-10.jpg'},
     {img: '../assets/img/gallery/gallery-img-11.jpg'},
-   // {img: '../assets/img/gallery/gallery-img-12.jpg'},
+    // {img: '../assets/img/gallery/gallery-img-12.jpg'},
     {img: '../assets/img/gallery/gallery-img-13.jpg'},
     {img: '../assets/img/gallery/gallery-img-14.jpg'},
     {img: '../assets/img/gallery/gallery-img-15.jpg'},
   ];
   slideConfig = {
+    autoplay: true,
     slidesToShow: 3,
     arrows: true,
     dots: true,
@@ -58,7 +59,8 @@ export class GalleryCarouselComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

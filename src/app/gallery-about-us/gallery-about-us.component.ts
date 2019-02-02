@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gallery-about-us',
@@ -8,16 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class GalleryAboutUsComponent implements OnInit {
 
   images = [
-    { img: '../assets/img/gallery-about-us/gallery-img-1.jpg' },
-    { img: '../assets/img/gallery-about-us/gallery-img-2.jpg' },
-    { img: '../assets/img/gallery-about-us/gallery-img-3.jpg' },
-    { img: '../assets/img/gallery-about-us/gallery-img-4.jpg' },
-    { img: '../assets/img/gallery-about-us/gallery-img-5.jpg' },
-    { img: '../assets/img/gallery-about-us/gallery-img-6.jpg' },
-    { img: '../assets/img/gallery-about-us/gallery-img-7.jpg' },
-    { img: '../assets/img/gallery-about-us/gallery-img-8.jpg' },
+    {img: '../assets/img/gallery-about-us/gallery-img-1.jpg'},
+    {img: '../assets/img/gallery-about-us/gallery-img-2.jpg'},
+    {img: '../assets/img/gallery-about-us/gallery-img-3.jpg'},
+    {img: '../assets/img/gallery-about-us/gallery-img-4.jpg'},
+    {img: '../assets/img/gallery-about-us/gallery-img-5.jpg'},
+    {img: '../assets/img/gallery-about-us/gallery-img-6.jpg'},
+    {img: '../assets/img/gallery-about-us/gallery-img-7.jpg'},
+    {img: '../assets/img/gallery-about-us/gallery-img-8.jpg'},
   ];
   slideConfig = {
+    autoplay: true,
     slidesToShow: 3,
     arrows: true,
     dots: true,
@@ -50,7 +51,8 @@ export class GalleryAboutUsComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

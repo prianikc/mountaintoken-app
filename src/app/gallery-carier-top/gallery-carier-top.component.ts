@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gallery-carier-top',
@@ -8,22 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class GalleryCarierTopComponent implements OnInit {
 
   images = [
-    { img: '../assets/img/gallery-carier-top/gallery-img-1.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-2.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-3.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-4.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-5.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-6.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-7.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-8.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-9.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-10.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-11.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-12.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-13.jpg' },
-    { img: '../assets/img/gallery-carier-top/gallery-img-14.jpg' },
+    {img: '../assets/img/gallery-carier-top/gallery-img-1.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-2.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-3.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-4.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-5.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-6.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-7.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-8.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-9.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-10.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-11.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-12.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-13.jpg'},
+    {img: '../assets/img/gallery-carier-top/gallery-img-14.jpg'},
   ];
   slideConfig = {
+    autoplay: true,
     slidesToShow: 3,
     arrows: true,
     dots: true,
@@ -56,7 +57,8 @@ export class GalleryCarierTopComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
